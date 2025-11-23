@@ -1,5 +1,6 @@
 ﻿using System;
 using tyuiu.cources.programming.interfaces.Sprint2;
+using Tyuiu.SoldatovaPA.Sprint2.Task6.V10.Lib;
 
 namespace Tyuiu.SoldatovaPA.Sprint2.Task6.V10.Lib
 {
@@ -33,7 +34,8 @@ namespace Tyuiu.SoldatovaPA.Sprint2.Task6.V10.Lib
                 };
             }
 
-            return $"{prevDay}.{prevMonth}.{prevYear}";
+            // Форматируем с ведущими нулями для дня и месяца
+            return $"{prevDay:00}.{prevMonth:00}.{prevYear}";
         }
     }
 }
