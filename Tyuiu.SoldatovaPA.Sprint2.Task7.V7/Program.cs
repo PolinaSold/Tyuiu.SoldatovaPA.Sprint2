@@ -18,9 +18,7 @@ namespace Tyuiu.SoldatovaPA.Sprint2.Task7.V7
             Console.WriteLine("* УСЛОВИЕ:                                                               *");
             Console.WriteLine("* Написать программу на C#, которая запрашивает исходные данные          *");
             Console.WriteLine("* (вещественные значения) и вычисляет, находится ли точка с координатами *");
-            Console.WriteLine("* X,Y в заштрихованной области.                                          *");
-            Console.WriteLine("*                                                                        *");
-            Console.WriteLine("*          Графики: y = 2 - x^2 и y = x                                 *");
+            Console.WriteLine("* X,Y в заштрихованной области между y = 2 - x^2 и y = x.                *");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                       *");
             Console.WriteLine("***************************************************************************");

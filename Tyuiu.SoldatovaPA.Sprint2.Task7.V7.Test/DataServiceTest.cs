@@ -11,20 +11,22 @@ namespace Tyuiu.SoldatovaPA.Sprint2.Task7.V7.Test
         {
             DataService ds = new DataService();
 
-            // Точка внутри области (например, (0, 1))
-            Assert.IsTrue(ds.CheckDotInShadedArea(0, 1));
+            // Точки ВНУТРИ области
+            Assert.IsTrue(ds.CheckDotInShadedArea(0, 1));    // Центр области
+            Assert.IsTrue(ds.CheckDotInShadedArea(-1, 0.5)); // Левая часть
+            Assert.IsTrue(ds.CheckDotInShadedArea(0.5, 0.7)); // Правая часть
 
-            // Точка на границе области
-            Assert.IsTrue(ds.CheckDotInShadedArea(1, 1));
+            // Точки на ГРАНИЦАХ
+            Assert.IsTrue(ds.CheckDotInShadedArea(-2, -2)); // Левое пересечение
+            Assert.IsTrue(ds.CheckDotInShadedArea(1, 1));   // Правое пересечение
+            Assert.IsTrue(ds.CheckDotInShadedArea(0, 2));   // На параболе
 
-            // Точка вне области (ниже параболы)
-            Assert.IsFalse(ds.CheckDotInShadedArea(0, 0));
-
-            // Точка вне области (выше прямой)
-            Assert.IsFalse(ds.CheckDotInShadedArea(0, 2));
-
-            // Точка на пересечении графиков
-            Assert.IsTrue(ds.CheckDotInShadedArea(-2, -2)); // Решение уравнения 2 - x² = x
+            // Точки ВНЕ области
+            Assert.IsFalse(ds.CheckDotInShadedArea(0, 0));   // Ниже прямой
+            Assert.IsFalse(ds.CheckDotInShadedArea(0, 3));   // Выше параболы
+            Assert.IsFalse(ds.CheckDotInShadedArea(-3, 0));  // x < -2
+            Assert.IsFalse(ds.CheckDotInShadedArea(2, 0));   // x > 1
+            Assert.IsFalse(ds.CheckDotInShadedArea(-1, -1)); // Ниже прямой
         }
     }
 }

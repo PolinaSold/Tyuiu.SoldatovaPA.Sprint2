@@ -8,14 +8,16 @@ namespace Tyuiu.SoldatovaPA.Sprint2.Task7.V7.Lib
     {
         public bool CheckDotInShadedArea(double x, double y)
         {
-            // Проверяем, находится ли точка ВЫШЕ параболы y = 2 - x^2
-            bool aboveParabola = y >= 2 - Math.Pow(x, 2);
+            // Проверяем, что точка находится между линиями:
+            // - НИЖЕ или НА параболе y = 2 - x²
+            // - ВЫШЕ или НА прямой y = x
+            // - И в пределах x от -2 до 1
 
-            // Проверяем, находится ли точка НИЖЕ прямой y = x
-            bool belowLine = y <= x;
+            bool belowParabola = y <= (2 - x * x);
+            bool aboveLine = y >= x;
+            bool inXRange = (x >= -2) && (x <= 1);
 
-            // Точка находится в заштрихованной области, если она выше параболы И ниже прямой
-            return aboveParabola && belowLine;
+            return belowParabola && aboveLine && inXRange;
         }
     }
 }
